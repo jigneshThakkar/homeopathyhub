@@ -145,6 +145,7 @@ h2 {
 }
 
 .intro .eyebrow,
+.practitioner .eyebrow,
 .services .eyebrow,
 .approach .eyebrow,
 .inquiry .eyebrow {
@@ -202,6 +203,49 @@ h2 {
 
 .services {
   background: linear-gradient(180deg, #f9f6ef 0%, #f4f8f1 100%);
+}
+
+.practitioner {
+  background: linear-gradient(180deg, #f7fbf4 0%, #f0f6ea 100%);
+}
+
+.practitioner-wrap {
+  max-width: 920px;
+}
+
+.practitioner-wrap > p,
+.practitioner-wrap > ul,
+.practitioner-wrap > h3 {
+  margin-bottom: 0.9rem;
+}
+
+.practitioner-wrap ul {
+  margin-top: 0.4rem;
+  margin-bottom: 1.2rem;
+  padding-left: 1.15rem;
+}
+
+.practitioner-wrap li {
+  margin-bottom: 0.5rem;
+}
+
+.practitioner-grid {
+  margin: 1.6rem 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.practitioner-card {
+  background: #ffffff;
+  border: 1px solid #d5dfce;
+  border-radius: 18px;
+  padding: 1.1rem;
+  box-shadow: var(--shadow);
+}
+
+.practitioner-card h3 {
+  margin-bottom: 0.65rem;
 }
 
 .card-grid {
@@ -416,7 +460,8 @@ h2 {
   }
 
   .card-grid,
-  .steps {
+  .steps,
+  .practitioner-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -435,7 +480,8 @@ h2 {
   }
 
   .card-grid,
-  .steps {
+  .steps,
+  .practitioner-grid {
     grid-template-columns: 1fr;
   }
 
