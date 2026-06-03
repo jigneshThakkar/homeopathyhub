@@ -449,13 +449,110 @@ h2 {
   }
 }
 
+@keyframes floatImage {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Practitioner Hero Section with Image */
+.practitioner-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin: 2.5rem 0 2rem;
+  padding: 2rem 0;
+  border-top: 1px solid rgba(47, 112, 83, 0.15);
+  border-bottom: 1px solid rgba(47, 112, 83, 0.15);
+}
+
+.image-frame-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.frame-glow {
+  position: absolute;
+  width: 110%;
+  height: 110%;
+  background: radial-gradient(circle at 35% 35%, rgba(47, 112, 83, 0.08) 0%, transparent 60%);
+  border-radius: 30px;
+  z-index: 0;
+}
+
+.image-frame {
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+  aspect-ratio: 3/4;
+  background: linear-gradient(135deg, rgba(47, 112, 83, 0.05) 0%, rgba(220, 230, 211, 0.15) 100%);
+  border: 2px solid rgba(47, 112, 83, 0.2);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(27, 48, 40, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  z-index: 1;
+  animation: floatImage 4s ease-in-out infinite;
+}
+
+.image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.frame-decoration {
+  position: absolute;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.frame-decoration-top {
+  top: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-top: 3px solid var(--brand);
+  border-right: 3px solid var(--brand);
+  border-radius: 8px;
+}
+
+.frame-decoration-bottom {
+  bottom: 20px;
+  left: 20px;
+  width: 60px;
+  height: 60px;
+  border-bottom: 3px solid rgba(47, 112, 83, 0.3);
+  border-left: 3px solid rgba(47, 112, 83, 0.3);
+  border-radius: 8px;
+}
+
+.practitioner-intro {
+  z-index: 2;
+}
+
+.practitioner-intro p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--ink-deep);
+  margin: 0 0 1rem;
+}
+
 @media (max-width: 980px) {
   .main-nav {
     display: none;
   }
 
   .split,
-  .inquiry-wrap {
+  .inquiry-wrap,
+  .practitioner-hero {
     grid-template-columns: 1fr;
   }
 
@@ -463,6 +560,10 @@ h2 {
   .steps,
   .practitioner-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .image-frame {
+    max-width: 280px;
   }
 }
 
