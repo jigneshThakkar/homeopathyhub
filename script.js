@@ -3,7 +3,7 @@ const form = document.getElementById("contact-form");
 const message = document.getElementById("form-message");
 const whatsappButton = document.getElementById("whatsapp-button");
 
-const contactEmail = form.dataset.contactEmail || "hello@homeopathyhub.com.au";
+const contactEmail = form.dataset.contactEmail || "krishnathakkar721@gmail.com";
 const whatsappNumber = (form.dataset.whatsapp || "61420347467").replace(/\D/g, "");
 
 yearEl.textContent = new Date().getFullYear();
