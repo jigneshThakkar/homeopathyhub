@@ -3,6 +3,26 @@ const form = document.getElementById("contact-form");
 const message = document.getElementById("form-message");
 const whatsappButton = document.getElementById("whatsapp-button");
 
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", (event) => {
+    const hash = anchor.getAttribute("href");
+
+    if (!hash || hash === "#") {
+      return;
+    }
+
+    const target = document.querySelector(hash);
+
+    if (!target) {
+      return;
+    }
+
+    event.preventDefault();
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    history.pushState(null, "", hash);
+  });
+});
+
 const contactEmail = form.dataset.contactEmail || "krishnathakkar721@gmail.com";
 const whatsappNumber = (form.dataset.whatsapp || "61420347467").replace(/\D/g, "");
 
@@ -35,13 +55,13 @@ const openWhatsApp = () => {
 
   const text = encodeURIComponent(buildInquiryText());
   const url = `https://wa.me/${whatsappNumber}?text=${text}`;
-  window.open(url, "_blank", "noopener,noreferrer");
+  globalThis.open(url, "_blank", "noopener,noreferrer");
 };
 
 const openEmailDraft = () => {
   const subject = encodeURIComponent("New Website Inquiry - Homeopathy Hub");
   const body = encodeURIComponent(buildInquiryText());
-  window.location.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
+  globalThis.location.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
 };
 
 const ensureValidForm = () => {
