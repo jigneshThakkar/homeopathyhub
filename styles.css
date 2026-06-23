@@ -46,15 +46,32 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.85rem 0;
+  padding: 0.86rem 0;
   gap: 1rem;
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.68rem;
   font-family: "Fraunces", serif;
-  font-size: 1.35rem;
+  font-size: 1.2rem;
+  font-weight: 700;
   color: var(--ink-deep);
   text-decoration: none;
+}
+
+.brand-logo {
+  width: 63px;
+  height: 63px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 10px rgba(31, 95, 69, 0.16));
+  transition: transform 220ms ease, filter 220ms ease;
+}
+
+.brand:hover .brand-logo {
+  transform: translateY(-1px) scale(1.02);
+  filter: drop-shadow(0 10px 16px rgba(31, 95, 69, 0.2));
 }
 
 .main-nav {
@@ -415,6 +432,31 @@ h2 {
   text-align: center;
 }
 
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.72rem;
+  margin-bottom: 0.55rem;
+  color: #edf5ef;
+  font-family: "Fraunces", serif;
+  font-size: 1.22rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer-brand-logo {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.22));
+  transition: transform 220ms ease, filter 220ms ease;
+}
+
+.footer-brand:hover .footer-brand-logo {
+  transform: translateY(-1px) scale(1.02);
+  filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.28));
+}
+
 .tagline {
   font-family: "Fraunces", serif;
   font-size: 1.2rem;
@@ -576,6 +618,29 @@ h2 {
 @media (max-width: 680px) {
   .site-header {
     position: static;
+  }
+
+  .nav-wrap {
+    padding: 0.62rem 0;
+  }
+
+  .brand {
+    gap: 0.58rem;
+    font-size: 1rem;
+  }
+
+  .brand-logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .footer-brand {
+    font-size: 1.08rem;
+  }
+
+  .footer-brand-logo {
+    width: 39px;
+    height: 39px;
   }
 
   .hero {
